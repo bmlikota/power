@@ -7,14 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by Alex on 28/02/2015.
  */
 
 // @EnableAutoConfigurationos
-@ComponentScan({ "hr.bm.vs.power" })
+//@ComponentScan({ "hr.bm.vs.power" })
 @SpringBootApplication
 public class PowerApplication extends SpringBootServletInitializer {
 
