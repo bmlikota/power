@@ -48,4 +48,11 @@ crashlytics.properties
 crashlytics-build.properties
 
 #target
-*/target/*
+target/*
+
+*.class
+*.classpath
+
+classes/*
+
+pom.properties
