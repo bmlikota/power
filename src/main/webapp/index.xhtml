@@ -13,7 +13,13 @@
 	<h1>Hello World PrimeFaces</h1>
 
 	<h:form>
-		<p:outputLabel value="test" />
+		<h:outputText value="Žuta" />
+		<p:selectBooleanCheckbox value="#{zaruljeBacking.zuta}" />
+		<br />
+		<h:outputText value="Crvena" />
+		<p:selectBooleanCheckbox value="#{zaruljeBacking.crvena}" />
+		<br/>
+		<p:commandButton value="Submit" />
 	</h:form>
 
 </h:body>

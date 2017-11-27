@@ -8,6 +8,7 @@ public class DataDTO {
 
 	private Long id;
 	private String content;
+	private String poruka;
 
 	public Long getId() {
 		return id;
@@ -23,6 +24,14 @@ public class DataDTO {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getPoruka() {
+		return poruka;
+	}
+
+	public void setPoruka(String poruka) {
+		this.poruka = poruka;
 	}
 
 }
