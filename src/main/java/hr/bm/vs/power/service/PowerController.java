@@ -53,6 +53,7 @@ public class PowerController {
 		// helper.setSubject("Hi from Arduino :-)");
 		// sender.send(message);
 		//
+		System.out.println("id = " + id);
 		DataDTO data = new DataDTO();
 		data.setId(new Long("3"));
 		data.setContent("Sadrzaj");
