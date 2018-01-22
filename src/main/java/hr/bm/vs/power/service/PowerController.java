@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hr.bm.vs.power.backing.ZaruljeBacking;
 import hr.bm.vs.power.domain.DataDTO;
+import hr.bm.vs.power.domain.PostDataDTO;
 
 /**
  * Created by Alex on 18/03/2015.
@@ -54,6 +56,24 @@ public class PowerController {
 		// sender.send(message);
 		//
 		System.out.println("id = " + id);
+		DataDTO data = new DataDTO();
+		data.setId(new Long("3"));
+		data.setContent("Sadrzaj");
+		data.setPoruka("#" + (ZaruljeBacking.isCrvena ? 1 : 0) + "*" + (ZaruljeBacking.isZuta ? 1 : 0) + "*");
+
+		return data;
+	}
+
+	@RequestMapping(value = "/service/power/post", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	// public @ResponseBody DataDTO powerPost(HttpEntity<String> httpEntity) throws
+	// Exception {
+	public @ResponseBody DataDTO powerPost(@RequestBody PostDataDTO postData) throws Exception {
+		// String json = httpEntity.getBody();
+		// System.out.println("test " + httpEntity.getHeaders().toString() + " ****** "
+		// + json);
+		System.out.println("param1 = " + postData.getParam1());
+		System.out.println("param2 = " + postData.getParam2());
+
 		DataDTO data = new DataDTO();
 		data.setId(new Long("3"));
 		data.setContent("Sadrzaj");
