@@ -6,7 +6,7 @@
 	<groupId>hr.bm.vs</groupId>
 	<artifactId>power</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>power</name>
 	<description>Spring Boot Project</description>
@@ -26,6 +26,7 @@
 		<primefaces.extensions.version>6.1.1</primefaces.extensions.version>
 		<primefaces.themes.version>1.0.10</primefaces.themes.version>
 		<hibernate.version>5.1.0.Final</hibernate.version>
+		<tomcat.version>8.5.11</tomcat.version>
 	</properties>
 
 	<repositories>
@@ -145,6 +146,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>exec</classifier>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
